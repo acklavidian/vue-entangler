@@ -1,6 +1,6 @@
 <template>
   <md-layout md-align="center">
-    <md-card md-with-hover>
+    <md-card v-if="issue" md-with-hover>
       <md-card-header>
         <md-avatar>
           <img :src="issue.user.avatarUrl" alt="People">
