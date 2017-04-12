@@ -24,7 +24,7 @@ const router = new Router({
 })
 router.push('home')
 Vue.material.registerTheme('default', {
-  primary: 'white',
+  primary: 'black',
   accent: 'green'
 })
 

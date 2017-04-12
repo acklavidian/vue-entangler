@@ -1,5 +1,5 @@
 <template>
-  <md-input-container  md-inline>
+  <md-input-container md-inline>
     <label> owner:  </label>
       <md-input type='text' @input="setOwner"></md-input>
   </md-input-container>
