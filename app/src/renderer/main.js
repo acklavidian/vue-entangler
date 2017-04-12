@@ -24,8 +24,8 @@ const router = new Router({
 })
 router.push('home')
 Vue.material.registerTheme('default', {
-  primary: 'black',
-  accent: 'green'
+  primary: 'grey',
+  accent: 'teal'
 })
 
 /* eslint-disable no-new */
