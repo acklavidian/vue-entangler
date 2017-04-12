@@ -2,6 +2,8 @@
 
 > An app for Entangling git with Github workflows.
 
+![](https://cloud.githubusercontent.com/assets/3977726/24947817/cc22ac3e-1f2d-11e7-9d33-66031367d67d.png)
+
 ## Build Setup
 
 ``` bash
