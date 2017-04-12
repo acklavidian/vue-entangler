@@ -1,0 +1,56 @@
+<template>
+  <div class="app" id="#app">
+    <md-toolbar>
+
+     <md-button @click.native="toggleSideNav" class="md-icon-button md-accent" to="settings" >
+        <md-icon>settings</md-icon>
+      </md-button>
+
+      <h2 class="md-title md-accent">
+        Entangler
+      </h2>
+
+    </md-toolbar>
+
+    <md-sidenav class="md-left" ref="leftSidenav" @open="open('Left')" @close="close('Left')">
+      <md-toolbar class="md-large">
+        <div class="md-toolbar-container">
+          <h3 class="md-title">Settings</h3>
+        </div>
+      </md-toolbar>
+      <md-layout md-align="center" md-gutter="16">
+        <settingsPage></settingsPage>
+      </md-layout>
+
+    </md-sidenav>
+    <md-layout>
+      <router-view></router-view>
+    </md-layout>
+  </div>
+</template>
+
+<script>
+  import settingsPage from 'renderer/components/settingsPage'
+  import store from 'renderer/vuex/store'
+
+  export default {
+    components: {
+      settingsPage
+    },
+    methods: {
+      toggleSideNav () {
+        this.$refs.leftSidenav.toggle()
+      },
+      open () {},
+      close () {}
+    },
+    store
+  }
+</script>
+<style scoped>
+  .app{
+    height: 100%;
+    width: 100%;
+    background: none;
+  }
+</style>
