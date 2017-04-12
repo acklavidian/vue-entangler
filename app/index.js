@@ -56,7 +56,7 @@ function createWindow (port) {
       .catch(err => console.log('An error occurred: ', err))
   }
 
-   win.on('close', e => {
+  win.on('close', e => {
     if (!isQuitting) {
       e.preventDefault()
 

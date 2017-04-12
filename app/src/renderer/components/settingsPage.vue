@@ -15,25 +15,10 @@
   import currentOwner from './settingsPage/currentOwner'
   import currentRepo from './settingsPage/currentRepo'
 
-  // Fetch repo info
-  var Octokat = require('octokat')
-  var octo = new Octokat({
-    username: 'acklavidian@gmail.com',
-    password: 'Iam31pp3.'
-  })
-
-  var repo = octo.repos('acklavidian', 'entangler')
-
-  repo.issues.fetch().then((a) => {
-    console.log(a.items[0].body)
-    this.branches = a.items[0].body
-    console.log('this', this.branches)
-  })
-
   export default {
-    data () {
-      return {
-        branches: 'nil'
+    methods: {
+      getIssue (event) {
+        this.$store.dispatch('getIssue')
       }
     },
     components: {
@@ -41,11 +26,6 @@
       currentPassword,
       currentOwner,
       currentRepo
-    },
-    methods: {
-      getIssue (event) {
-        this.$store.dispatch('getIssue')
-      }
     }
   }
 </script>
