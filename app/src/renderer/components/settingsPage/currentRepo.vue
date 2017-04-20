@@ -4,6 +4,7 @@
       <md-input type='text' @input="setRepo"></md-input>
   </md-input-container>
 </template>
+
 <script>
 import * as types from '../../vuex/mutation-types'
 

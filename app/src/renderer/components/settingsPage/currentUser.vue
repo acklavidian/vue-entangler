@@ -5,6 +5,7 @@
   </md-input-container>
 </template>
 <script>
+
 import * as types from '../../vuex/mutation-types'
 
 export default {
