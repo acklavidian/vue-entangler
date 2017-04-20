@@ -5,13 +5,13 @@ const state = {
 }
 
 const mutations = {
-  [types.GITHUB_GET_ISSUE] (state, username) {
+  [types.GITHUB_SET_ISSUE] (state, username) {
     state.issue = username
   }
 }
 
 const actions = {
-  getIssue ({state, commit, rootState}) {
+  [types.GITHUB_GET_ISSUE] ({state, commit, rootState}) {
     var Octokat = require('octokat')
     var octo = new Octokat({
       username: rootState.userSettings.username,
@@ -21,7 +21,7 @@ const actions = {
 
     repo.issues.fetch().then((a) => {
       console.log(a.items[0])
-      commit(types.GITHUB_GET_ISSUE, a.items[0])
+      commit(types.GITHUB_SET_ISSUE, a.items[0])
     })
   }
 }

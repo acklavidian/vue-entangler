@@ -31,7 +31,13 @@
 
 <script>
   import settingsPage from 'renderer/components/settingsPage'
+  import * as types from 'renderer/vuex/mutation-types'
   import store from 'renderer/vuex/store'
+
+  store.dispatch(types.USER_SETTINGS_LOAD)
+  if (store.state.userSettings.username !== '') {
+    store.dispatch(types.GITHUB_GET_ISSUE)
+  }
 
   export default {
     components: {

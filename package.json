@@ -78,6 +78,7 @@
     "webpack-dev-server": "^2.3.0"
   },
   "dependencies": {
+    "electron-settings": "^3.0.14",
     "octokat": "^0.6.4",
     "vue-markdown": "^2.1.3"
   }

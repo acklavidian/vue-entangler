@@ -9,16 +9,19 @@
       </md-layout>
     </md-layout>
 </template>
+
 <script>
   import currentUser from './settingsPage/currentUser'
   import currentPassword from './settingsPage/currentPassword'
   import currentOwner from './settingsPage/currentOwner'
   import currentRepo from './settingsPage/currentRepo'
+  import * as types from '../vuex/mutation-types'
 
   export default {
     methods: {
       getIssue (event) {
-        this.$store.dispatch('getIssue')
+        this.$store.dispatch(types.USER_SETTINGS_SAVE)
+        this.$store.dispatch(types.GITHUB_GET_ISSUE)
       }
     },
     components: {

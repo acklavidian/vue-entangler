@@ -1,5 +1,7 @@
 import * as types from '../mutation-types'
 
+const settings = require('electron-settings')
+
 const state = {
   username: '',
   password: '',
@@ -22,7 +24,29 @@ const mutations = {
   }
 }
 
+const actions = {
+  [types.USER_SETTINGS_SAVE] ({ state }) {
+    settings.setAll({
+      userSettings: {
+        username: state.username,
+        password: state.password,
+        owner: state.owner,
+        repo: state.repo
+      }
+    })
+  },
+  [types.USER_SETTINGS_LOAD] ({ state, commit, rootState }) {
+    let storedSettings = settings.get('userSettings')
+
+    commit(types.GITHUB_SET_USERNAME, storedSettings.username)
+    commit(types.GITHUB_SET_PASSWORD, storedSettings.password)
+    commit(types.GITHUB_SET_OWNER, storedSettings.owner)
+    commit(types.GITHUB_SET_REPO, storedSettings.repo)
+  }
+}
+
 export default {
   state,
-  mutations
+  mutations,
+  actions
 }
