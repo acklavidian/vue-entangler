@@ -36,9 +36,9 @@ const actions = {
     })
   },
   [types.USER_SETTINGS_LOAD] ({ state, commit, rootState }) {
-    let storedSettings = settings.get('userSettings')
+    let storedSettings = settings.get('userSettings') || {}
 
-    commit(types.GITHUB_SET_USERNAME, storedSettings.username)
+    commit(types.GITHUB_SET_USERNAME, storedSettings.username || '')
     commit(types.GITHUB_SET_PASSWORD, storedSettings.password)
     commit(types.GITHUB_SET_OWNER, storedSettings.owner)
     commit(types.GITHUB_SET_REPO, storedSettings.repo)

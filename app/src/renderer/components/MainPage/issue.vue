@@ -6,12 +6,12 @@
           <img :src="issue.user.avatarUrl" alt="People">
         </md-avatar>
         <div class="md-title">{{ issue.title }}</div>
-        <div class="md-subhead">issue#{{issue.number}}</div>
+        <div class="md-subhead">issue#{{ issue.number }}</div>
       </md-card-header>
 
       <md-card-content>
         <md-layout md-gutter>
-          <vue-markdown class='markdown'> {{issue.body}} </vue-markdown>
+          <vue-markdown class='markdown' :source='issue.body'></vue-markdown>
         </md-layout md-gutter>
       </md-card-content>
       <md-card-actions>

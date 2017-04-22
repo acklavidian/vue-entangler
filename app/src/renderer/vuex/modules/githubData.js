@@ -5,8 +5,8 @@ const state = {
 }
 
 const mutations = {
-  [types.GITHUB_SET_ISSUE] (state, username) {
-    state.issue = username
+  [types.GITHUB_SET_ISSUE] (state, issue) {
+    state.issue = issue
   }
 }
 

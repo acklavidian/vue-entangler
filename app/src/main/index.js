@@ -33,7 +33,7 @@ app.on('window-all-closed', () => {
     app.quit()
   }
 })
-
+console.log('daPath', app.getPath('userData'))
 app.on('activate', () => {
   if (mainWindow === null) {
     createWindow()
