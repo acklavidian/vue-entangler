@@ -36,7 +36,8 @@
 
   store.dispatch(types.USER_SETTINGS_LOAD)
   if (store.state.userSettings.username !== '') {
-    store.dispatch(types.GITHUB_GET_ISSUE)
+    store.dispatch(types.GITHUB_GET_PULL)
+    store.dispatch(types.GIT_DETECT_BRANCH_NAME)
   }
 
   export default {

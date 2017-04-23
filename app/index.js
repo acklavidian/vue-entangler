@@ -1,6 +1,6 @@
-const os = require('os')
+// const os = require('os')
 const path = require('path')
-const url = require('url')
+// const url = require('url')
 const electron = require('electron')
 // Module to control application life.
 const app = electron.app

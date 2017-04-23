@@ -28,7 +28,7 @@
   export default {
     computed: {
       issue () {
-        return this.$store.state.githubData.issue
+        return this.$store.state.githubData.pull
       }
     },
     methods: {

@@ -79,6 +79,7 @@
   },
   "dependencies": {
     "electron-settings": "^3.0.14",
+    "git-repo-info": "^1.4.1",
     "octokat": "^0.6.4",
     "vue-markdown": "^2.1.3"
   }
