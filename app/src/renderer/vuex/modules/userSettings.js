@@ -6,7 +6,8 @@ const state = {
   username: '',
   password: '',
   owner: '',
-  repo: ''
+  repo: '',
+  directory: ''
 }
 
 const mutations = {
@@ -21,6 +22,9 @@ const mutations = {
   },
   [types.GITHUB_SET_REPO] (state, repo) {
     state.repo = repo
+  },
+  [types.USER_SETTINGS_DIRECTORY] (state, directory) {
+    state.directory = directory
   }
 }
 

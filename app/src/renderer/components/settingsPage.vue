@@ -4,6 +4,7 @@
       <currentPassword></currentPassword>
       <currentOwner></currentOwner>
       <currentRepo></currentRepo>
+      <currentDirectory></currentDirectory>
       <md-layout md-align="end">
         <md-button class="md-accent" @click.native="getIssue">Save</md-button>
       </md-layout>
@@ -15,6 +16,7 @@
   import currentPassword from './settingsPage/currentPassword'
   import currentOwner from './settingsPage/currentOwner'
   import currentRepo from './settingsPage/currentRepo'
+  import currentDirectory from './settingsPage/currentDirectory'
   import * as types from '../vuex/mutation-types'
 
   export default {
@@ -28,7 +30,8 @@
       currentUser,
       currentPassword,
       currentOwner,
-      currentRepo
+      currentRepo,
+      currentDirectory
     }
   }
 </script>

@@ -28,7 +28,8 @@ Vue.material.registerTheme('default', {
   accent: {
     color: 'green',
     hue: 'A700'
-  }
+  },
+  background: 'white'
 })
 
 /* eslint-disable no-new */
