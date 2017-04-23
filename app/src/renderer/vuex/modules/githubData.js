@@ -35,10 +35,16 @@ const actions = {
       password: rootState.userSettings.password
     })
     var repo = octo.repos(rootState.userSettings.owner, rootState.userSettings.repo)
+    var localBranchName = rootState.localGitData.branch.name
+    var options = {
+      head: 'acklavidian' + ':' + localBranchName,
+      state: 'all'
+    }
 
-    repo.pulls.fetch({head: 'acklavidian:' + rootState.localGitData.branch, state: 'all'}).then((a) => {
-      console.log('pull: ', a.items[0])
-      commit(types.GITHUB_SET_PULL, a.items[0])
+    repo.pulls.fetch(options).then((a) => {
+      var pull = a.items[0]
+      console.log('pull: ', pull)
+      commit(types.GITHUB_SET_PULL, pull)
     })
   }
 }

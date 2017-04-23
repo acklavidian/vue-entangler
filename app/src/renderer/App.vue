@@ -35,9 +35,12 @@
   import store from 'renderer/vuex/store'
 
   store.dispatch(types.USER_SETTINGS_LOAD)
-  if (store.state.userSettings.username !== '') {
-    store.dispatch(types.GITHUB_GET_PULL)
-    store.dispatch(types.GIT_DETECT_BRANCH_NAME)
+
+  window.onfocus = window.onload = () => {
+    if (store.state.userSettings.username !== '') {
+      store.dispatch(types.GIT_DETECT_BRANCH_NAME)
+      store.dispatch(types.GITHUB_GET_PULL)
+    }
   }
 
   export default {

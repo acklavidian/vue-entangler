@@ -35,7 +35,8 @@ const actions = {
         username: state.username,
         password: state.password,
         owner: state.owner,
-        repo: state.repo
+        repo: state.repo,
+        directory: state.directory
       }
     })
   },
@@ -46,6 +47,7 @@ const actions = {
     commit(types.GITHUB_SET_PASSWORD, storedSettings.password)
     commit(types.GITHUB_SET_OWNER, storedSettings.owner)
     commit(types.GITHUB_SET_REPO, storedSettings.repo)
+    commit(types.USER_SETTINGS_DIRECTORY, storedSettings.directory)
   }
 }
 
