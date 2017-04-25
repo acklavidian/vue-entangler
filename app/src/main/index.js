@@ -1,6 +1,7 @@
 'use strict'
 
-import { app, BrowserWindow, Menu, Tray } from 'electron'
+import { app, BrowserWindow, Tray } from 'electron'
+var path = require('path')
 
 let mainWindow
 const winURL = process.env.NODE_ENV === 'development'
@@ -22,23 +23,21 @@ function createWindow () {
     mainWindow = null
   })
 
+  mainWindow.on('blur', () => {
+    console.log('hiding')
+    app.hide()
+  })
   // eslint-disable-next-line no-console
   console.log('mainWindow opened')
 }
-
-let appIcon = null
+let tray = null
 app.on('ready', () => {
-  appIcon = new Tray()
-  const contextMenu = Menu.buildFromTemplate([
-    {label: 'Item1', type: 'radio'},
-    {label: 'Item2', type: 'radio'}
-  ])
+  let iconPath = path.join(__dirname, '../../icons/tray_logo.png')
+  tray = new Tray(iconPath)
 
-  // Make a change to the context menu
-  contextMenu.items[1].checked = false
-
-  // Call this again for Linux because we modified the context menu
-  appIcon.setContextMenu(contextMenu)
+  tray.on('click', (event) => {
+    (mainWindow === null) ? createWindow() : app.focus()
+  })
 })
 app.on('ready', createWindow)
 

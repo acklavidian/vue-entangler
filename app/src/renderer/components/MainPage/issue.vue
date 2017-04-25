@@ -33,7 +33,7 @@
     },
     methods: {
       openOnGithub () {
-        shell.openExternal(this.$store.state.githubData.issue.htmlUrl)
+        shell.openExternal(this.$store.state.githubData.pull.htmlUrl)
       }
     },
     components: {
